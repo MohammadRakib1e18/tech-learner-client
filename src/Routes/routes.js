@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import NotFound from "../others/NotFound/NotFound";
 import Blogs from "../Pages/Blogs/Blogs";
 import Courses from "../Pages/Courses/Courses";
 import FrequentQues from "../Pages/FrequentQues/FrequentQues";
@@ -42,4 +43,8 @@ export const routes = createBrowserRouter([
       }
     ],
   },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
+  }
 ]);
