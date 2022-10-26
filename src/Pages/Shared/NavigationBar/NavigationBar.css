@@ -41,4 +41,12 @@
 }
 .dark-mood{
     cursor: pointer;
+    margin-left: 40px;
+}
+
+/* media query  */
+@media  screen and (max-width: 990px) {
+    .active, .inactive{
+        margin-bottom: 5px;
+    }
 }
