@@ -6,36 +6,39 @@
     font-family: 'Gill Sans';
 }
 .nav ul {
-  disfplay: flex;
   gap: 5px;
   margin: 10px;
 }
 .nav ul li {
   list-style: none;
-  color: white;
   font-size: 1.1rem;
   font-family: "Times New Roman", Times, serif;
   font-weight: 700;
   margin: 0 15px;
   padding: 5px;
   cursor: pointer;
-  color: white;
 }
 
 .active {
   background-color: #d88526;
-  color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
+  color: white;
 }
 .active:hover {
   background-color: #f78606;
+  color: white;
 }
 .inactive {
   background-color: #0a7ac418;
-  color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+.inactive:hover {
+  background-color: #0a7ac431;
+}
+.dark-mood{
+    cursor: pointer;
 }
