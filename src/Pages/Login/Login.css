@@ -1,5 +1,5 @@
 .login-container {
-  min-height: 680px;
+  min-height: 780px;
   padding-top: 20px;
   background-image: url("../../Images/login.jpg");
   background-repeat: no-repeat;
@@ -10,6 +10,7 @@
   position: relative;
   z-index: 1;
   margin-top: -25px;
+  box-sizing: border-box;
 }
 .login {
   width: 80%;
@@ -176,4 +177,6 @@ input[type="submit"] {
   text-indent: -100%;
   opacity: 1;
 }
+
+
 
