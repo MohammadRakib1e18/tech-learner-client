@@ -45,17 +45,13 @@ export const routes = createBrowserRouter([
       {
         path: "/blogs",
         element: (
-          <PrivateRoute>
             <Blogs></Blogs>
-          </PrivateRoute>
         ),
       },
       {
         path: "/courses/blogs",
         element: (
-          <PrivateRoute>
             <Blogs></Blogs>
-          </PrivateRoute>
         ),
       },
       {
