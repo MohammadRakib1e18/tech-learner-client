@@ -9,16 +9,16 @@ const Courses = () => {
   return (
     <div>
       <NavigationBar></NavigationBar>
-      <Container>
+      <div className="mx-3">
         <Row>
-          <Col lg="4">
+          <Col lg="2">
             <SideBar></SideBar>
           </Col>
-          <Col lg="8">
+          <Col lg="10">
             <Outlet></Outlet>
           </Col>
         </Row>
-      </Container>
+      </div>
       <Footer></Footer>
     </div>
   );
