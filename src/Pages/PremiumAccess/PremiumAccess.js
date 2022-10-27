@@ -13,7 +13,7 @@ const PremiumAccess = () => {
         <h4>Purchased Course:</h4>
         <div className="purchase-course w-75 py-2 mx-auto">
           <h3 className="text-danger fs-2">{title}</h3>
-          <h6 className='text-muted'>author: {name}</h6>
+          <h6 className='text-muted'>Instructor: {name}</h6>
         </div>
         <h2 className="mt-3">
           🎈 You've successfully unlock the{" "}

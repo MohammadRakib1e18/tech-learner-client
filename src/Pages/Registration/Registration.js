@@ -47,7 +47,6 @@ const Registration = () => {
             setErrors(error.message);
           });
         const user = result.user;
-        console.log(user);
         Swal.fire({
           icon: "success",
           title: `Hello, ${name}`,
@@ -64,7 +63,6 @@ const Registration = () => {
    const handleGoogleSignIn = () => {
      googleSignIn()
        .then((result) => {
-         console.log("user: ", result.user);
          loginResult(true, result);
        })
        .catch((error) => {
@@ -75,7 +73,6 @@ const Registration = () => {
    const handleGithubSignIn = () => {
      githubSignIn()
        .then((result) => {
-         console.log("user: ", result.user);
          loginResult(true, result);
        })
        .catch((error) => {
@@ -86,7 +83,6 @@ const Registration = () => {
 
    const loginResult = (isSuccessful, result) => {
      if (isSuccessful) {
-       console.log(result.user);
        navigate(from, { replace: true });
        Swal.fire({
          icon: "success",

@@ -5,7 +5,6 @@ import './Category.css';
 
 const Category = () => {
     const categoryCourses = useLoaderData();
-    console.log(categoryCourses);
     return (
         <div className='mb-3'>
             <h2 className='text-center text-muted mb-4'>Selected Category: <span className='text-danger'>{categoryCourses[0].category_name}</span></h2>

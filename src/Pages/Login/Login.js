@@ -22,7 +22,6 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log("email-login-info: ", result);
         loginResult(true, result);
       })
       .catch((error) => {
@@ -34,7 +33,6 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
-        console.log("user: ", result.user);
         loginResult(true, result);
       })
       .catch((error) => {
@@ -45,7 +43,6 @@ const Login = () => {
   const handleGithubSignIn = () => {
     githubSignIn()
       .then((result) => {
-        console.log("user: ", result.user);
         loginResult(true, result);
       })
       .catch((error) => {
@@ -56,7 +53,6 @@ const Login = () => {
 
   const loginResult = (isSuccessful, result) => {
     if (isSuccessful) {
-      console.log(result.user);
       navigate(from, { replace: true });
       Swal.fire({
         icon: "success",

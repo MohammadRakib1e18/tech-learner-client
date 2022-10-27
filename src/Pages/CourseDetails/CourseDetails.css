@@ -1,0 +1,18 @@
+.course-details{
+    position: relative;
+}
+.download-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 1.2rem;
+    background-color: rgba(61, 61, 61, 0.24);
+    padding: 2px 10px;
+    padding-bottom: 8px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+.download-icon:hover{
+    border: 1px solid rgba(12, 78, 116, 0.63);
+    background-color: rgba(61, 61, 61, 0.158);
+    color: rgb(12, 159, 245);
+}
