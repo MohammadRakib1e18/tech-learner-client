@@ -14,6 +14,7 @@ const CourseDetails = () => {
     details,
     category_name,
     total_view,
+    _id
   } = singleCourse;
   const { name, img } = author;
   return (
@@ -47,7 +48,7 @@ const CourseDetails = () => {
           <Card.Text className="fs-5 text-muted">{details}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-muted text-center p-0">
-          <Link to={`/courses/premium`}>
+          <Link to={`/courses/premium/${_id}`}>
             <Button variant="info w-100 text-light fs-4 fw-semibold card-button">
               <FaShoppingCart/> Get Premium Access
             </Button>

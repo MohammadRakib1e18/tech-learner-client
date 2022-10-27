@@ -94,12 +94,16 @@ export const routes = createBrowserRouter([
           ),
       },
       {
-        path: "/courses/premium",
+        path: "/courses/premium/:id",
         element: (
           <PrivateRoute>
             <PremiumAccess></PremiumAccess>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(
+            `https://tech-learner-server.vercel.app/courses/course/${params.id}`
+          ),
       },
     ],
   },
