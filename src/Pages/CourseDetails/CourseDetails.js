@@ -34,7 +34,7 @@ const CourseDetails = () => {
 
   return (
     <div className="d-flex justify-content-center mb-4">
-      <Card className="w-50">
+      <Card className="course-details-container">
         <Card.Title className="fw-semibold fs-2 text-info text-center">
           {title}
         </Card.Title>
@@ -61,11 +61,11 @@ const CourseDetails = () => {
         />
         <Card.Body>
           <p className="d-flex justify-content-between">
-            <small>category: {category_name}</small>{" "}
-            <small>
+            <span>category: {category_name}</span>{" "}
+            <span>
               <FaEye /> {total_view}K
-            </small>
-            <small>rating: {rating}</small>
+            </span>
+            <span>rating: {rating}</span>
           </p>
 
           <Card.Text className="fs-5 text-muted">{details}</Card.Text>

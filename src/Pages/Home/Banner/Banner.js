@@ -7,8 +7,8 @@ const Banner = () => {
     <div className="banner-container">
       <div className="banner-bg"></div>
       <div className="banner-details text-center">
-        <h2 style={{ fontSize: "2.5rem", fontWeight: "700" }}>Tech Learner</h2>
-        <p style={{ fontSize: "1.5rem" }}>
+        <h2>Tech Learner</h2>
+        <p>
           Start your career with our Tech Courses
         </p>
         <Link to='/courses'>

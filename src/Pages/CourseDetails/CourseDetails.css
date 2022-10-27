@@ -1,3 +1,6 @@
+.course-details-container{
+    width: 60%;
+}
 .course-details{
     position: relative;
 }
@@ -15,4 +18,10 @@
     border: 1px solid rgba(12, 78, 116, 0.63);
     background-color: rgba(61, 61, 61, 0.158);
     color: rgb(12, 159, 245);
+}
+
+@media screen and (max-width: 688px){
+    .course-details-container{
+        width: 100%;
+    }
 }
