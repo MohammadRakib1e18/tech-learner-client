@@ -11,7 +11,7 @@ const SideBar = () => {
   }, []);
   return (
     <div>
-      <h2>Category</h2>
+      <h2 className="text-decoration-underline text-muted">Category</h2>
       <div>
         {categories.map((category) => (
           <p key={category.id}>

@@ -62,6 +62,10 @@ export const routes = createBrowserRouter([
         path: "/frequent_ques",
         element: <FrequentQues></FrequentQues>,
       },
+      {
+        path: "/courses/frequent_ques",
+        element: <FrequentQues></FrequentQues>,
+      },
     ],
   },
   {
