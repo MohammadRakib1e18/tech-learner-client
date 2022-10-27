@@ -2,12 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../layout/HomeLayout";
 import NotFound from "../others/NotFound/NotFound";
 import Blogs from "../Pages/Blogs/Blogs";
+import Login from '../Pages/Login/Login';
+import Registration from '../Pages/Registration/Registration';
 import Category from "../Pages/Category/Category";
 import Courses from "../Pages/Courses/Courses";
 import FrequentQues from "../Pages/FrequentQues/FrequentQues";
-import Home from "../Pages/Home/Home/Home";
-import Login from "../Pages/Login/Login";
-import Registration from "../Pages/Registration/Registration";
 import CoursesLayout from "../layout/CoursesLayout";
 import Banner from "../Pages/Home/Banner/Banner";
 
@@ -23,6 +22,22 @@ export const routes = createBrowserRouter([
       {
         path: "/home",
         element: <Banner></Banner>,
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/courses/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/registration',
+        element: <Registration></Registration>
+      },
+      {
+        path: '/courses/registration',
+        element: <Registration></Registration>
       },
       {
         path: "/blogs",
