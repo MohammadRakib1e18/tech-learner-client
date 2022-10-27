@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import BlogLayout from "../layout/BlogLayout";
-import Main from "../layout/Main";
+import HomeLayout from "../layout/HomeLayout";
 import NotFound from "../others/NotFound/NotFound";
 import Blogs from "../Pages/Blogs/Blogs";
 import Category from "../Pages/Category/Category";
@@ -13,50 +13,13 @@ import Registration from "../Pages/Registration/Registration";
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
-    children: [
-      {
-        path: "/",
-        element: <Home></Home>,
-      },
-      {
-        path: "/home",
-        element: <Home></Home>,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/registration",
-        element: <Registration></Registration>,
-      },
-      {
-        path: "/frequent_ques",
-        element: <FrequentQues></FrequentQues>,
-      },
-      {
-        path: "/courses",
-        element: <Courses></Courses>,
-      },
-      {
-        path: "/category/:id",
-        element: <Category></Category>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
-      },
-    ],
+    element: <HomeLayout></HomeLayout>,
   },
   {
-    path: "/blogs",
-    element: <BlogLayout></BlogLayout>,
-    children: [
-      {
-        path: "/blogs",
-        element: <Blogs></Blogs>,
-      },
-    ],
+    path: '/home',
+    element: <HomeLayout></HomeLayout>
   },
+
   {
     path: "*",
     element: <NotFound></NotFound>,
