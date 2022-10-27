@@ -3,6 +3,7 @@ import BlogLayout from "../layout/BlogLayout";
 import Main from "../layout/Main";
 import NotFound from "../others/NotFound/NotFound";
 import Blogs from "../Pages/Blogs/Blogs";
+import Category from "../Pages/Category/Category";
 import Courses from "../Pages/Courses/Courses";
 import FrequentQues from "../Pages/FrequentQues/FrequentQues";
 import Home from "../Pages/Home/Home/Home";
@@ -38,6 +39,12 @@ export const routes = createBrowserRouter([
         path: "/courses",
         element: <Courses></Courses>,
       },
+      {
+        path: "/category/:id",
+        element: <Category></Category>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
+      },
     ],
   },
   {
@@ -45,10 +52,10 @@ export const routes = createBrowserRouter([
     element: <BlogLayout></BlogLayout>,
     children: [
       {
-        path: '/blogs',
-        element: <Blogs></Blogs>
-      }
-    ]
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+    ],
   },
   {
     path: "*",

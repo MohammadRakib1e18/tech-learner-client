@@ -15,8 +15,8 @@ const NavigationBar = () => {
       expand="lg"
       className={
         dark
-          ? "bg-dark text-light py-0"
-          : "bg-dark bg-opacity-25 text-dark py-0"
+          ? "bg-dark text-light py-0 mb-4"
+          : "bg-dark bg-opacity-25 text-dark py-0 mb-4"
       }
     >
       <Container className={dark ? "text-light" : "text-dark"}>
