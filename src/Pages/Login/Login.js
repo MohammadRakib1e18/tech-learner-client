@@ -26,7 +26,7 @@ const Login = () => {
         loginResult(true, result);
       })
       .catch((error) => {
-        loginResult(false);
+        loginResult(false, error.message);
         console.error("Error: ", error);
       });
   };
@@ -38,7 +38,7 @@ const Login = () => {
         loginResult(true, result);
       })
       .catch((error) => {
-        loginResult(false);
+        loginResult(false, error.message);
         console.error("google-sign-in-Error: ", error);
       });
   };
@@ -49,7 +49,7 @@ const Login = () => {
         loginResult(true, result);
       })
       .catch((error) => {
-        loginResult(false);
+        loginResult(false, error.message);
         console.error("github-sign-in-Error: ", error);
       });
   };
@@ -68,6 +68,7 @@ const Login = () => {
       Swal.fire({
         icon: "error",
         title: "Login Failed! Try Again",
+        text: `${result}`
       });
     }
   };

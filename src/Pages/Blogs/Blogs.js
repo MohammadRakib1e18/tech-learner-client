@@ -10,12 +10,12 @@ const Blogs = () => {
       </h2>
       <div className="blogs-container">
         <article
-          class="blogs"
+          className="blogs"
           data-aos="zoom-in-right"
           data-aos-duration="2000"
         >
-          <h5 class="blogs-Que">1: what is cors?</h5>
-          <p class="blogs-Ans">
+          <h5 className="blogs-Que">1: what is cors?</h5>
+          <p className="blogs-Ans">
             <span className="fw-bold">CORS:</span> Cross-Origin Resource Sharing
           </p>
           <p className="blogs-Ans">
@@ -38,23 +38,27 @@ const Blogs = () => {
             actual request.
           </p>
         </article>
-        <article class="blogs" data-aos="zoom-in-left" data-aos-duration="2000">
-          <h5 class="blogs-Que">
+        <article
+          className="blogs"
+          data-aos="zoom-in-left"
+          data-aos-duration="2000"
+        >
+          <h5 className="blogs-Que">
             2: Why are you using firebase? What other options do you have to
             implement authentication?
           </h5>
-          <p class="blogs-Ans">
+          <p className="blogs-Ans">
             Firebase is great for quick projects: it's easy to set up, fast, in
             many cases requires only front-end logic. It lets you focus on your
             app instead of implementing custom authentication or database
             connections.
           </p>
-          <p class="blogs-Ans">
+          <p className="blogs-Ans">
             I'm using firebase in my recent projects. It's very user friendly
             and helps my site to implement authentication system quickly. It
             also helps to host my project without any cost!
           </p>
-          <p class="blogs-Ans">
+          <p className="blogs-Ans">
             Though firebase is the first choice for small to medium level
             projects, there are also some authentication platforms:
             <ul>
@@ -67,17 +71,17 @@ const Blogs = () => {
           </p>
         </article>
         <article
-          class="blogs"
+          className="blogs"
           data-aos="zoom-in-right"
           data-aos-duration="2000"
         >
-          <h5 class="blogs-Que">3: How does the private route work?</h5>
-          <p class="blogs-Ans">
+          <h5 className="blogs-Que">3: How does the private route work?</h5>
+          <p className="blogs-Ans">
             The private route is also called the protected route. That means it
             has some restriction from the normal behaviors.
           </p>
           <br />
-          <p class="blogs-Ans">
+          <p className="blogs-Ans">
             The private route component is similar to the public route, the only
             change is that redirect URL and authenticate condition. If the user
             is not authenticated he will be redirected to the login page and the
@@ -85,9 +89,13 @@ const Blogs = () => {
             (Logged in).
           </p>
         </article>
-        <article class="blogs" data-aos="zoom-in-left" data-aos-duration="2000">
-          <h5 class="blogs-Que">3: What is Node? How does Node work?</h5>
-          <p class="blogs-Ans">
+        <article
+          className="blogs"
+          data-aos="zoom-in-left"
+          data-aos-duration="2000"
+        >
+          <h5 className="blogs-Que">3: What is Node? How does Node work?</h5>
+          <p className="blogs-Ans">
             Node is a javascript runtime. It's not a programming language. V8
             engine has been used to run javascript on the browser. But Node
             helps to run javascript in the backend as well.

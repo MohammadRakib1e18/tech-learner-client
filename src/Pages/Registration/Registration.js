@@ -10,7 +10,9 @@ import { AuthContext } from "../../contexts/AuthProvider";
 const Registration = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
-  const { auth, createUser } = useContext(AuthContext);
+  const [errors, setErrors] = useState('');
+  const { auth, createUser, googleSignIn, githubSignIn } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -20,6 +22,7 @@ const Registration = () => {
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
+    const userPhotoURL = form.photo.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
 
@@ -31,13 +34,18 @@ const Registration = () => {
       return;
     }
 
+    setErrors('');
+
     createUser(email, password)
       .then((result) => {
         updateProfile(auth.currentUser, {
           displayName: `${name}`,
+          photoURL: `${userPhotoURL}`
         })
           .then(() => {})
-          .catch((error) => {});
+          .catch((error) => {
+            setErrors(error.message);
+          });
         const user = result.user;
         console.log(user);
         Swal.fire({
@@ -50,9 +58,50 @@ const Registration = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.error("error shows: ", error);
+        setErrors(error.message);
       });
   };
+   const handleGoogleSignIn = () => {
+     googleSignIn()
+       .then((result) => {
+         console.log("user: ", result.user);
+         loginResult(true, result);
+       })
+       .catch((error) => {
+         loginResult(false, error.message);
+         console.error("google-sign-in-Error: ", error);
+       });
+   };
+   const handleGithubSignIn = () => {
+     githubSignIn()
+       .then((result) => {
+         console.log("user: ", result.user);
+         loginResult(true, result);
+       })
+       .catch((error) => {
+         loginResult(false, error.message);
+         console.error("github-sign-in-Error: ", error);
+       });
+   };
+
+   const loginResult = (isSuccessful, result) => {
+     if (isSuccessful) {
+       console.log(result.user);
+       navigate(from, { replace: true });
+       Swal.fire({
+         icon: "success",
+         title: `Login Successful!`,
+         showConfirmButton: true,
+         timer: 1500,
+       });
+     } else {
+       Swal.fire({
+         icon: "error",
+         title: "Login Failed! Try Again",
+         text: `${result}`,
+       });
+     }
+   };
   return (
     <>
       <div className="login-container"></div>
@@ -64,6 +113,12 @@ const Registration = () => {
             type="email"
             name="email"
             placeholder="Email Address"
+            required
+          />
+          <input
+            type="text"
+            name="photo"
+            placeholder="User Photo URL"
             required
           />
           <span
@@ -103,6 +158,7 @@ const Registration = () => {
             className="password2"
             required
           />
+          <p>{errors}</p>
           <button className="submit-btn">Register</button>
         </form>
         <div className="hr">
@@ -112,10 +168,10 @@ const Registration = () => {
         <div className="sign-with-social-media">
           <h2>Register With Social Media Account</h2>
           <div className="sign-in-icons">
-            <h2 id="google">
+            <h2 id="google" onClick={handleGoogleSignIn}>
               <FaGoogle /> Google
             </h2>
-            <h2 id="github">
+            <h2 id="github" onClick={handleGithubSignIn}>
               <FaGithub /> Github
             </h2>
           </div>

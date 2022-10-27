@@ -5,10 +5,25 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 import navTitle from "../../../Images/img3.png";
 import "./NavigationBar.css";
-import {FaMoon, FaRegMoon } from "react-icons/fa";
+import { FaMoon, FaRegMoon } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 const NavigationBar = () => {
   const [dark, setDark] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Navbar
       collapseOnSelect
@@ -32,7 +47,10 @@ const NavigationBar = () => {
             Tech Learner
           </span>
         </Navbar.Brand>
-        <Navbar.Toggle className={dark?"bg-light bg-opacity-10":"bg-dark bg-opacity-25"} aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle
+          className={dark ? "bg-light bg-opacity-10" : "bg-dark bg-opacity-25"}
+          aria-controls="responsive-navbar-nav"
+        />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="nav ms-auto">
             <ul className="d-lg-flex">
@@ -60,8 +78,37 @@ const NavigationBar = () => {
               >
                 <li>FAQ</li>
               </NavLink>
-              {5>5   ? (
-                <button>Sign Out</button>
+              {user?.uid ? (
+                <>
+                  <Button
+                    onClick={handleLogOut}
+                    style={{
+                      color: "white",
+                      backgroundColor: "#343338",
+                      textDecoration: "none",
+                    }}
+                    variant="link"
+                  >
+                    Sign Out
+                  </Button>
+                  <OverlayTrigger
+                    key={"bottom"}
+                    placement={"bottom"}
+                    overlay={
+                      <Tooltip id={`tooltip-${"bottom"}`}>
+                        {user.displayName}
+                      </Tooltip>
+                    }
+                  >
+                    <span title={user.displayName}>
+                      <img
+                        src={user.photoURL}
+                        style={{ width: "40px", borderRadius: "50%" }}
+                        alt=""
+                      />
+                    </span>
+                  </OverlayTrigger>
+                </>
               ) : (
                 <>
                   <NavLink
